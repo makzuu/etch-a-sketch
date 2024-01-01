@@ -12,6 +12,9 @@ function createGrid(cols, rows) {
             const square = document.createElement("div");
 
             square.classList.add("square");
+            square.addEventListener("mouseover", () => {
+                square.classList.add("painted");
+            })
 
             row.appendChild(square);
         }
