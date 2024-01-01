@@ -14,7 +14,7 @@ function createGrid(cols, rows) {
             square.classList.add("square");
             square.addEventListener("mouseover", () => {
                 square.classList.add("painted");
-            })
+            });
 
             row.appendChild(square);
         }
@@ -22,3 +22,24 @@ function createGrid(cols, rows) {
         container.appendChild(row);
     }
 }
+
+function removeSquares() {
+    const container = document.querySelector("#container");
+
+    let child;
+    while (child = container.firstChild) {
+        container.removeChild(child);
+    }
+}
+
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+    let squares = prompt("number of squares per side:", 16);
+    if (!squares || Number.isNaN(squares) || squares > 100) {
+        return;
+    }
+
+    squares = Number(squares);
+    removeSquares();
+    createGrid(squares, squares);
+});

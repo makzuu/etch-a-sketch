@@ -1,8 +1,14 @@
-#container {
+.main {
     width: 600px;
     height: 600px;
-    border: solid 1px #181818;
     margin: 0 auto;
+}
+
+#container {
+    border: solid 1px #181818;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -21,4 +27,10 @@
 
 .painted {
     background-color: #181818;
+}
+
+button {
+    border-width: 0px;
+    width: 100%;
+    padding: 0;
 }
